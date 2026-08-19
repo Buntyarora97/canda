@@ -1,0 +1,1 @@
+- [Pretty URL environments](pretty-url-environments.md) — Apache uses .htaccess on hosting; the Replit PHP preview needs its own router for the same clean routes.
