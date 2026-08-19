@@ -45,10 +45,10 @@ $headerSchemas = $GLOBALS['schemas'] ?? [];
         </button>
 
         <a class="brand" href="<?= e(site_url()) ?>" aria-label="GIO Mobility Canada — home">
-            <img src="<?= e(site_url('assets/images/gio-logo.png')) ?>"
-                 srcset="<?= e(site_url('assets/images/gio-logo.png')) ?> 1x, <?= e(site_url('assets/images/gio-logo@2x.png')) ?> 2x"
-                 alt="GIO Mobility" width="116" height="35">
-            <span class="brand-tag">MOBILITY&nbsp;CANADA</span>
+            <img class="brand-logo-voltiva" src="<?= e(site_url('assets/images/voltiva-logo.png')) ?>"
+                 srcset="<?= e(site_url('assets/images/voltiva-logo.png')) ?> 1x, <?= e(site_url('assets/images/voltiva-logo@2x.png')) ?> 2x"
+                 alt="Voltiva Electric Mobility" width="110" height="83">
+            <span class="brand-tag">ELECTRIC&nbsp;MOBILITY</span>
         </a>
 
         <nav class="main-nav" aria-label="Primary">

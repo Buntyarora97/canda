@@ -71,7 +71,12 @@ define('MAX_UPLOAD_BYTES', 8 * 1024 * 1024); // 8 MB per image
 /* ------------------------------------------------------------- security -- */
 // Random per-install key used for HMAC signing (CSRF, form tokens).
 // CHANGE THIS after install (any long random string).
-defined('APP_KEY') or define('APP_KEY', getenv('GIO_APP_KEY') ?: 'CHANGE-ME-to-a-long-random-string-64-chars-minimum');
+// Replit/shared-hosting friendly: prefer a managed secret, then the hosting
+// environment variable, and only use the placeholder as an explicit warning.
+defined('APP_KEY') or define(
+    'APP_KEY',
+    getenv('SESSION_SECRET') ?: (getenv('GIO_APP_KEY') ?: 'CHANGE-ME-to-a-long-random-string-64-chars-minimum')
+);
 
 /* ------------------------------------------------------------- errors ---- */
 if (GIO_ENV === 'production') {

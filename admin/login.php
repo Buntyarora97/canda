@@ -52,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="login-body">
 <div class="login-card">
     <div class="login-brand">
-        <img src="<?= e(site_url('assets/images/gio-logo-light.png')) ?>" srcset="<?= e(site_url('assets/images/gio-logo-light@2x.png')) ?> 2x" alt="GIO Mobility" width="128" height="39">
-        <p>Mobility Canada · Admin</p>
+        <img class="admin-brand-logo" src="<?= e(site_url('assets/images/voltiva-logo.png')) ?>" srcset="<?= e(site_url('assets/images/voltiva-logo.png')) ?> 1x, <?= e(site_url('assets/images/voltiva-logo@2x.png')) ?> 2x" alt="Voltiva Electric Mobility" width="128" height="96">
+        <p>Electric Mobility · Admin</p>
     </div>
     <form method="post" action="" class="login-form" autocomplete="off">
         <?= csrf_field() ?>

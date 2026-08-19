@@ -14,8 +14,8 @@ $storeAddress = setting('store_address', 'Unit 1 - 11400 Twigg Place, Richmond, 
     <div class="container footer-grid">
         <div class="footer-brand">
             <a class="brand brand-light" href="<?= e(site_url()) ?>">
-                <img src="<?= e(site_url('assets/images/gio-logo-light.png')) ?>" srcset="<?= e(site_url('assets/images/gio-logo-light@2x.png')) ?> 2x" alt="GIO Mobility" width="116" height="35">
-                <span class="brand-tag">MOBILITY&nbsp;CANADA</span>
+                <img class="brand-logo-voltiva footer-logo" src="<?= e(site_url('assets/images/voltiva-logo.png')) ?>" srcset="<?= e(site_url('assets/images/voltiva-logo.png')) ?> 1x, <?= e(site_url('assets/images/voltiva-logo@2x.png')) ?> 2x" alt="Voltiva Electric Mobility" width="110" height="83">
+                <span class="brand-tag">ELECTRIC&nbsp;MOBILITY</span>
             </a>
             <p class="footer-blurb">Stylish, dependable electric mobility — proudly designed for Canadians for over a decade.</p>
             <div class="social-row">
