@@ -42,8 +42,8 @@ require __DIR__ . '/includes/header.php';
         <h1 class="hero-title"><?= e($hero['headline'] ?? 'Go Further. Live Freely.') ?></h1>
         <p class="hero-sub hero-copy"><?= e($hero['subheading'] ?? 'Discover stylish, thoughtfully designed mobility solutions made for comfort, confidence and everyday independence.') ?></p>
         <div class="hero-ctas hero-buttons">
-            <a class="btn btn-primary btn-lg" href="<?= eurl($hero['cta1_url'] ?? '/shop') ?>"><?= e($hero['cta1_text'] ?? 'Explore Mobility') ?></a>
-            <a class="btn btn-outline-light btn-lg" href="<?= eurl($hero['cta2_url'] ?? '/shop') ?>"><?= e($hero['cta2_text'] ?? 'Find Your GIO') ?></a>
+            <a class="btn btn-primary btn-lg" href="<?= e(site_url('shop')) ?>"><?= e($hero['cta1_text'] ?? 'Explore Mobility') ?></a>
+            <a class="btn btn-outline-light btn-lg" href="<?= e(site_url('shop')) ?>"><?= e($hero['cta2_text'] ?? 'Find Your GIO') ?></a>
         </div>
         <div class="hero-trust hero-trust-luxury">
             <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Canadian designed</span>
