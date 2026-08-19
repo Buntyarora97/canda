@@ -24,6 +24,7 @@ $headerSchemas = $GLOBALS['schemas'] ?? [];
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <link rel="stylesheet" href="<?= e(site_url('assets/css/style.css')) ?>?v=1.1.0">
     <?php if (!empty($seo['hero_preload'])): ?>
     <link rel="preload" as="image" href="<?= e($seo['hero_preload']) ?>" fetchpriority="high">
