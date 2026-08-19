@@ -79,3 +79,6 @@ For production, use the database and credentials supplied by your shared host.
   appears in Admin → Enquiries even when email delivery is intentionally
   unavailable.
 - Take a database backup before importing future schema changes.
+
+For a complete Hostinger + phpMyAdmin upload and configuration walkthrough,
+see [HOSTINGER_DEPLOYMENT.md](HOSTINGER_DEPLOYMENT.md).
