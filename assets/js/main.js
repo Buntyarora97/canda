@@ -6,6 +6,7 @@
 
   const $  = (s, c) => (c || document).querySelector(s);
   const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
+  const appUrl = (path) => window.gioUrl ? window.gioUrl(path) : ('/' + String(path).replace(/^\/+/, ''));
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------------- toast ---------------- */
@@ -75,7 +76,7 @@
     if (q.length < 2) { suggestions.innerHTML = ''; return; }
     searchTimer = setTimeout(async () => {
       try {
-        const res = await fetch('api/search.php?q=' + encodeURIComponent(q));
+        const res = await fetch(appUrl('api/search.php?q=' + encodeURIComponent(q)));
         const data = await res.json();
         renderSuggestions(data.results || [], q);
       } catch (e) { /* network hiccup — stay silent */ }
@@ -84,7 +85,7 @@
   function renderSuggestions(items, q) {
     if (!suggestions) return;
     if (!items.length) {
-      suggestions.innerHTML = '<a class="suggestion suggestion-all" href="search?q=' + encodeURIComponent(q) + '">Search for &ldquo;' + escHtml(q) + '&rdquo;</a>';
+      suggestions.innerHTML = '<a class="suggestion suggestion-all" href="' + appUrl('search?q=' + encodeURIComponent(q)) + '">Search for &ldquo;' + escHtml(q) + '&rdquo;</a>';
       return;
     }
     suggestions.innerHTML = items.map((p) =>
@@ -94,7 +95,7 @@
         '<span class="suggestion-price">' + escHtml(p.price_label) + '</span></span>' +
       '</a>'
     ).join('') +
-    '<a class="suggestion suggestion-all" href="search?q=' + encodeURIComponent(q) + '">See all results for &ldquo;' + escHtml(q) + '&rdquo;</a>';
+    '<a class="suggestion suggestion-all" href="' + appUrl('search?q=' + encodeURIComponent(q)) + '">See all results for &ldquo;' + escHtml(q) + '&rdquo;</a>';
   }
   function escHtml(s) {
     return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -209,7 +210,7 @@
     if (!tray) return;
     const list = getList(CP_KEY);
     if (!list.length) { tray.hidden = true; return; }
-    fetch('api/compare.php?ids=' + list.join(','))
+    fetch(appUrl('api/compare.php?ids=' + list.join(',')))
       .then((r) => r.json())
       .then((data) => {
         const items = $('#compareTrayItems');
@@ -249,7 +250,7 @@
       return;
     }
     try {
-      const res = await fetch('api/newsletter.php', {
+      const res = await fetch(appUrl('api/newsletter.php'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: 'email=' + encodeURIComponent(email),
@@ -305,7 +306,7 @@
 
     if (productId) {
       try {
-        const res = await fetch('api/product-summary.php?id=' + encodeURIComponent(productId));
+        const res = await fetch(appUrl('api/product-summary.php?id=' + encodeURIComponent(productId)));
         const data = await res.json();
         if (!data.ok) throw new Error('not found');
         const p = data.product;
@@ -400,7 +401,7 @@
     $('.btn-spinner', btn).hidden = false;
 
     try {
-      const res = await fetch('api/enquiry-submit.php', {
+      const res = await fetch(appUrl('api/enquiry-submit.php'), {
         method: 'POST',
         body: new FormData(form),
       });

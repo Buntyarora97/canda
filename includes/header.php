@@ -17,6 +17,7 @@ $headerSchemas = $GLOBALS['schemas'] ?? [];
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#111315">
+    <meta name="gio-base-url" content="<?= e(SITE_URL) ?>">
     <?= render_seo_tags() ?>
     <link rel="icon" type="image/png" sizes="32x32" href="<?= e(site_url('assets/images/favicon.png')) ?>">
     <link rel="apple-touch-icon" href="<?= e(site_url('assets/images/apple-touch-icon.png')) ?>">
@@ -30,6 +31,7 @@ $headerSchemas = $GLOBALS['schemas'] ?? [];
     <?= schema_print(schema_organization()) ?>
     <?= schema_print(schema_website()) ?>
     <?php foreach ($headerSchemas as $sc) echo schema_print($sc); ?>
+    <script>window.GIO_BASE_URL = <?= json_encode(rtrim(SITE_URL, '/'), JSON_UNESCAPED_SLASHES) ?>; window.gioUrl = function (path) { return (window.GIO_BASE_URL ? window.GIO_BASE_URL + '/' : '/') + String(path).replace(/^\/+/, ''); };</script>
 </head>
 <body class="<?= e($GLOBALS['body_class'] ?? '') ?>">
 <a class="skip-link" href="#main">Skip to content</a>

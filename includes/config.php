@@ -44,12 +44,10 @@ defined('DB_CHARSET') or define('DB_CHARSET', 'utf8mb4');
 /* ------------------------------------------------------------- site ------ */
 // Full base URL of the site, no trailing slash. Auto-detected when empty.
 if (!defined('SITE_URL')) {
-    $auto = getenv('GIO_SITE_URL') ?: '';
-    if ($auto === '' && !empty($_SERVER['HTTP_HOST'])) {
-        $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-        $auto = $scheme . '://' . $_SERVER['HTTP_HOST'];
-    }
-    define('SITE_URL', rtrim($auto, '/'));
+    // Keep generated asset/navigation URLs relative unless the real public
+    // domain is explicitly configured. This prevents localhost/proxy URLs
+    // from being sent to a visitor's browser.
+    define('SITE_URL', rtrim((string)(getenv('GIO_SITE_URL') ?: ''), '/'));
 }
 defined('SITE_NAME') or define('SITE_NAME', 'GIO Mobility Canada');
 

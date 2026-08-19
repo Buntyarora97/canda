@@ -53,7 +53,7 @@ require __DIR__ . '/includes/header.php';
     const ids = slots.map(s => s.value).filter(Boolean);
     if (ids.length < 2) { wrap.innerHTML = '<p class="compare-empty">Select at least two models above to compare them here.</p>'; return; }
     wrap.innerHTML = '<p class="compare-empty">Loading…</p>';
-    fetch('api/compare.php?ids=' + ids.join(','))
+    fetch(window.gioUrl('api/compare.php?ids=' + ids.join(',')))
       .then(r => r.json())
       .then(data => {
         const ps = data.products || [];
