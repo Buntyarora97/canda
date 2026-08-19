@@ -1,0 +1,2798 @@
+You are an elite **Canadian e-commerce UI/UX designer, luxury web creative director, senior PHP/MySQL developer, conversion-rate optimization specialist, product catalogue architect, SEO expert and QA engineer**.
+
+Your task is to design and develop a COMPLETE, PRODUCTION-READY, PREMIUM RESPONSIVE E-COMMERCE-STYLE WEBSITE for:
+
+# GIO MOBILITY CANADA
+
+Reference/current website:
+
+**https://giomobility.ca/**
+
+IMPORTANT:
+
+Study the existing GIO Mobility Canada website for:
+
+* Existing brand identity
+* Products
+* Product categories
+* Product names
+* Product specifications
+* Brand positioning
+* Current customer-facing information
+* Product images
+* Policies
+* Support information
+
+However, DO NOT simply copy the existing website design.
+
+Create a dramatically more:
+
+* Premium
+* Luxurious
+* Modern
+* Conversion-focused
+* Interactive
+* Visually polished
+* Mobile-friendly
+* Product-focused
+
+experience.
+
+The final website should feel similar in quality to a premium automotive or modern electric-mobility brand rather than a basic mobility equipment shop.
+
+---
+
+# MOST IMPORTANT BUSINESS MODEL
+
+This website should visually behave like a premium e-commerce website, BUT for this version:
+
+## DO NOT PROCESS ONLINE PAYMENT.
+
+Instead:
+
+Customer explores product
+→ opens product detail page
+→ selects colour/variant where available
+→ clicks:
+
+# BUY NOW
+
+→ premium enquiry modal/form opens.
+
+The selected product must AUTOMATICALLY be attached to the enquiry.
+
+When submitted:
+
+1. Save enquiry into MySQL database.
+2. Show it instantly inside Admin Panel.
+3. Send enquiry notification to business email.
+4. Send acknowledgement email to customer.
+5. Store product, variant and enquiry source.
+6. Show professional success confirmation.
+
+This entire workflow MUST actually work.
+
+Do not make a fake non-functional button.
+
+---
+
+# TECHNOLOGY
+
+This website will run on normal shared hosting.
+
+Use:
+
+* PHP 8+
+* MySQL
+* HTML5
+* CSS3
+* Vanilla JavaScript
+
+Lightweight CDN libraries may be used only where necessary.
+
+DO NOT require:
+
+* Node.js
+* React
+* Next.js
+* Laravel
+* Python
+* MongoDB
+* Docker
+* npm build process
+
+Website must be deployable through standard cPanel/shared hosting.
+
+Use:
+
+PDO prepared statements
+Reusable PHP components
+Secure admin authentication
+CSRF protection
+Server-side validation
+Responsive images
+SEO-friendly URLs
+
+---
+
+# DEVELOPMENT STRUCTURE
+
+Create reusable files/components such as:
+
+/includes/header.php
+/includes/footer.php
+/includes/config.php
+/includes/database.php
+/includes/functions.php
+/includes/product-card.php
+/includes/enquiry-modal.php
+/includes/seo.php
+/includes/schema.php
+
+/admin/
+
+assets/css/
+assets/js/
+assets/images/
+
+uploads/products/
+uploads/banners/
+uploads/categories/
+
+---
+
+# DESIGN PHILOSOPHY
+
+This must NOT look like:
+
+* a medical hospital website
+* an outdated mobility store
+* a cheap Shopify template
+* a generic Bootstrap theme
+
+It should feel like:
+
+# “PREMIUM ELECTRIC MOBILITY FOR MODERN CANADIAN LIFE”
+
+Design inspiration:
+
+Modern EV brands
+Luxury mobility brands
+Premium automotive websites
+Clean Canadian lifestyle brands
+
+Create an experience focused on:
+
+Freedom
+Independence
+Comfort
+Design
+Technology
+Confidence
+Lifestyle
+
+---
+
+# COLOUR PALETTE
+
+Create a premium palette based on GIO's current identity while modernizing the presentation.
+
+Recommended:
+
+### Primary
+
+Deep Graphite
+`#111315`
+
+### Secondary
+
+Luxury Charcoal
+`#1B1E21`
+
+### Background
+
+Premium Off White
+`#F7F7F5`
+
+### Pure White
+
+`#FFFFFF`
+
+### Brand Accent
+
+Use the official GIO red tone based on the supplied/current logo.
+
+### Supporting Grey
+
+`#70747A`
+
+### Soft Border
+
+`#E6E7E8`
+
+Avoid overusing bright red.
+
+Red should mainly be used for:
+
+CTA
+Important highlights
+Active states
+Small brand details
+
+Large backgrounds should primarily use:
+
+White
+Off-white
+Graphite
+Dark charcoal
+
+---
+
+# TYPOGRAPHY
+
+Choose a highly polished modern sans-serif combination.
+
+Suggested direction:
+
+Headings:
+**Manrope / Plus Jakarta Sans / Sora**
+
+Body:
+**Inter**
+
+Use only properly licensed fonts.
+
+Typography should feel:
+
+Modern
+Canadian
+Premium
+Technological
+Highly readable
+
+Use bold oversized headings without making the website aggressive.
+
+---
+
+# GLOBAL UI DETAILS
+
+Use:
+
+Large whitespace
+12–18px card radius
+Very subtle shadows
+Luxury thin borders
+Grid-based layouts
+Editorial typography
+Large product photography
+Strong hierarchy
+
+Avoid:
+
+Random gradients
+Cheap glowing buttons
+Huge shadows
+Excessive rounded blobs
+
+---
+
+# EXISTING LOGO
+
+Use the authentic GIO Mobility logo supplied by the client/current business.
+
+DO NOT invent a replacement brand identity unless instructed later.
+
+Prepare web-safe:
+
+Dark logo version
+Light logo version
+Favicon
+Retina resolution version
+
+---
+
+# GLOBAL HEADER
+
+Create premium sticky navigation.
+
+Top announcement bar:
+
+Example:
+
+**Designed for Canadian Mobility • Product Support Available**
+
+This text must be admin-editable.
+
+Navigation:
+
+GIO Logo
+
+SHOP ▼
+
+* All Mobility Products
+* 3-Wheel Mobility
+* 4-Wheel Mobility
+* Enclosed Mobility
+* Mobility Walkers
+* Accessories & Parts
+
+BEST SELLERS
+
+NEW ARRIVALS
+
+WHY GIO
+
+CUSTOMER STORIES
+
+SUPPORT ▼
+
+* FAQs
+* Ordering Guide
+* Product Manuals
+* Warranty
+* Shipping
+* Contact Support
+
+ABOUT
+
+CONTACT
+
+Icons:
+
+Search
+Wishlist
+Enquiry
+
+Primary CTA:
+
+# SHOP MOBILITY
+
+Do NOT show a checkout/cart icon as if online payment is enabled unless later requested.
+
+---
+
+# MOBILE NAVIGATION
+
+Use clean animated mobile menu.
+
+Include:
+
+Shop
+Categories
+Best Sellers
+New Arrivals
+Support
+Contact
+
+Sticky bottom actions where useful:
+
+CALL | ENQUIRE
+
+Do not clutter mobile viewport.
+
+---
+
+# HOME PAGE
+
+Create a breathtaking premium homepage.
+
+---
+
+# SECTION 1 – HERO
+
+Create a full-screen or approximately 85vh hero.
+
+Use a professionally generated DEMO campaign banner until real campaign photography is supplied.
+
+## DEMO HERO IMAGE TO GENERATE
+
+Create:
+
+“A premium photorealistic Canadian suburban lifestyle scene featuring a stylish modern electric mobility scooter, sophisticated mature adult rider, beautiful contemporary Canadian neighbourhood, clean landscaping, soft morning sunlight, confident independent lifestyle, premium automotive advertising aesthetic, ultra-realistic commercial photography, accessible and empowering without looking clinical.”
+
+IMPORTANT:
+
+Do not misrepresent a generated scooter as an exact GIO model.
+
+If real product photography is available, use a genuine GIO product cutout integrated into the scene instead.
+
+Hero copy:
+
+Eyebrow:
+
+**MOBILITY, REIMAGINED.**
+
+H1:
+
+# Go Further. Live Freely.
+
+Supporting:
+
+Discover stylish, thoughtfully designed mobility solutions made for comfort, confidence and everyday independence.
+
+Buttons:
+
+# EXPLORE MOBILITY
+
+# FIND YOUR GIO
+
+Add subtle trust text underneath.
+
+---
+
+# HERO ANIMATION
+
+Use:
+
+Slow cinematic image scale
+Text stagger reveal
+Subtle background parallax
+CTA hover microinteraction
+Smooth page-entry transition
+
+No aggressive animation.
+
+---
+
+# SECTION 2 – CATEGORY DISCOVERY
+
+Title:
+
+# Find Your Perfect Ride
+
+Display premium visual category cards:
+
+3-Wheel Mobility
+
+4-Wheel Mobility
+
+All-Season Enclosed
+
+Accessible Operation
+
+Mobility Walkers
+
+Parts & Accessories
+
+Each category card:
+
+Large photograph
+Category title
+1-line description
+Explore arrow
+
+Use image zoom on hover.
+
+---
+
+# SECTION 3 – BEST SELLERS
+
+Homepage product section:
+
+# Best Sellers
+
+Component must support:
+
+# MAXIMUM 12 PRODUCTS
+
+Display:
+
+Desktop:
+4 cards per row
+
+Tablet:
+2–3
+
+Mobile:
+1.2 card carousel / 2 where appropriate
+
+If demo database currently has only 10 products, display the available 10.
+
+When admin adds more products, automatically show up to 12 marked as Best Seller.
+
+Include:
+
+VIEW ALL
+
+---
+
+# SECTION 4 – FEATURED PRODUCT STORY
+
+Create a cinematic dark section featuring one flagship mobility scooter.
+
+Large product visual on one side.
+
+Information on other side:
+
+Product name
+
+Lifestyle positioning
+
+3–5 key facts
+
+Explore Product
+
+Enquire Now
+
+Use subtle scroll parallax.
+
+---
+
+# SECTION 5 – NEW ARRIVALS
+
+Title:
+
+# What's New at GIO
+
+Support maximum:
+
+# 12 PRODUCTS
+
+Automatically pull products where:
+
+is_new_arrival = 1
+
+Use horizontal premium carousel on desktop/mobile.
+
+---
+
+# SECTION 6 – SHOP BY NEED
+
+Create cards such as:
+
+Long-Range Mobility
+
+Easy Operation
+
+All-Weather Comfort
+
+Maximum Stability
+
+Everyday Errands
+
+Portable Mobility
+
+Do not make medical claims.
+
+---
+
+# SECTION 7 – WHY GIO
+
+Build a premium benefits section inspired by verified current brand positioning.
+
+Possible cards:
+
+Canadian Designed
+
+Thoughtful Features
+
+Comfort-Focused Mobility
+
+Product Support
+
+Parts Availability
+
+Designed for Everyday Independence
+
+Only publish claims that are verified by the client/current official website.
+
+---
+
+# SECTION 8 – PREMIUM LIFESTYLE BANNER
+
+Generate second demo banner.
+
+Concept:
+
+Stylish mobility scooter beside a premium Canadian waterfront promenade or landscaped urban park.
+
+Copy concept:
+
+# Your World Shouldn't Get Smaller.
+
+Supporting:
+
+Rediscover everyday freedom with mobility built around real life.
+
+CTA:
+
+DISCOVER GIO
+
+---
+
+# SECTION 9 – COMPARE MODELS
+
+Create premium comparison module.
+
+Allow visitor to select up to:
+
+3 products
+
+Compare:
+
+Product image
+Model
+Wheel configuration
+Range
+Top speed
+Capacity
+Dimensions
+Battery
+Key features
+
+Only populate fields from verified database data.
+
+Button:
+
+VIEW FULL COMPARISON
+
+---
+
+# SECTION 10 – CUSTOMER STORIES
+
+Create carousel/grid.
+
+Use only REAL reviews supplied by client or imported from verified current source with permission.
+
+Do NOT generate fake reviews.
+
+Display:
+
+Customer photo if supplied
+First name / approved display name
+Model
+Review
+Rating
+Source
+
+---
+
+# SECTION 11 – SUPPORT
+
+Title:
+
+# Support That Travels With You
+
+Cards:
+
+Product Manuals
+
+Frequently Asked Questions
+
+Parts & Accessories
+
+Contact Support
+
+Warranty Information
+
+Ordering Guide
+
+---
+
+# SECTION 12 – BUYING GUIDE
+
+Create visual 4-step journey:
+
+01 Explore
+
+02 Compare
+
+03 Send Enquiry
+
+04 GIO Team Contacts You
+
+Make clear that this website version collects enquiries rather than taking online payment.
+
+---
+
+# SECTION 13 – NEWS / GUIDES
+
+Display latest 3–4 articles.
+
+Examples:
+
+Choosing Between 3-Wheel and 4-Wheel Mobility
+
+Understanding Mobility Scooter Range
+
+What to Consider Before Choosing an Enclosed Scooter
+
+Mobility Scooter Storage Guide
+
+---
+
+# SECTION 14 – FINAL CTA
+
+Dark luxury section.
+
+Headline:
+
+# Ready to Find Your GIO?
+
+Buttons:
+
+SHOP MODELS
+
+TALK TO OUR TEAM
+
+---
+
+# PRODUCT CARD DESIGN
+
+Every product card must look premium.
+
+Include:
+
+Product image
+Badge
+Product title
+Short descriptor
+Price if verified/enabled
+Compare price if applicable
+Available colours dots
+Stock status
+3 quick specification icons
+VIEW DETAILS
+BUY NOW
+
+Product cards must support badges:
+
+BEST SELLER
+
+NEW
+
+IN STOCK
+
+PRE-ORDER
+
+LIMITED
+
+COMING SOON
+
+OUT OF STOCK
+
+Admin controls badges.
+
+---
+
+# PRODUCT CARD IMAGE EFFECT
+
+VERY IMPORTANT.
+
+Image should:
+
+Remain crisp
+
+Have large clean background
+
+On desktop hover:
+
+Scale image smoothly approximately 1.05–1.08
+
+Optional second image transition
+
+Use smooth 400–600ms easing
+
+Do not crop important scooter sections.
+
+---
+
+# PRODUCT DETAIL PAGE
+
+Every product must open on a separate SEO-friendly page.
+
+Example:
+
+/product/gio-titan-premium
+
+Create an exceptional product page.
+
+---
+
+# PRODUCT PAGE ABOVE THE FOLD
+
+Desktop:
+
+LEFT approximately 55%
+
+Product gallery
+
+RIGHT approximately 45%
+
+Product information
+
+Mobile:
+
+Gallery first
+
+Then information.
+
+---
+
+# MULTIPLE PRODUCT IMAGES
+
+Each product must support unlimited images.
+
+Recommended:
+
+5–15 images
+
+Display:
+
+Main large image
+
+Vertical thumbnails on desktop
+
+Horizontal thumbnails mobile
+
+Gallery lightbox
+
+Image counter
+
+Fullscreen
+
+Swipe support
+
+Keyboard navigation
+
+---
+
+# PREMIUM IMAGE ZOOM
+
+CRITICAL.
+
+Desktop:
+
+Hover over main product image → magnified zoom region.
+
+Mouse movement should change zoom focus.
+
+Click → fullscreen lightbox.
+
+Mobile:
+
+Pinch-style experience where possible or tap-to-open fullscreen.
+
+Double tap/touch zoom should feel natural.
+
+Do not use low-resolution enlarged images.
+
+---
+
+# PRODUCT INFO
+
+Display:
+
+Badge
+
+Product Name
+
+Model / SKU
+
+Short tagline
+
+CAD price if enabled
+
+Compare-at price
+
+Availability
+
+Colour selector
+
+Variant selector
+
+Key specifications
+
+Short summary
+
+Buttons:
+
+# BUY NOW
+
+# ASK A QUESTION
+
+Phone support link
+
+Wishlist
+
+Share
+
+---
+
+# BUY NOW BEHAVIOUR
+
+THIS IS THE MOST IMPORTANT FUNCTIONAL REQUIREMENT.
+
+When visitor clicks:
+
+# BUY NOW
+
+DO NOT redirect to checkout.
+
+Open a premium modal / drawer:
+
+# Interested in the [PRODUCT NAME]?
+
+Selected product must automatically populate:
+
+Product ID
+
+Product Name
+
+Product SKU
+
+Selected colour
+
+Selected variant
+
+Current displayed price
+
+Current page URL
+
+Product thumbnail
+
+These fields should be captured reliably server-side where applicable and not trusted solely from editable browser inputs.
+
+---
+
+# BUY NOW LEAD FORM
+
+Visible fields:
+
+First Name *
+
+Last Name
+
+Email *
+
+Phone *
+
+Province *
+
+City *
+
+Postal Code
+
+Preferred Contact:
+
+Phone
+Email
+
+Question / Message
+
+Checkbox:
+
+“I agree to be contacted regarding this product enquiry.”
+
+Hidden/system fields:
+
+Product ID
+
+SKU
+
+Variant
+
+Colour
+
+Page URL
+
+UTM Source
+
+UTM Medium
+
+UTM Campaign
+
+Referrer
+
+Date/time
+
+Do not collect unnecessary medical information.
+
+---
+
+# LEAD SUCCESS EXPERIENCE
+
+After successful submission:
+
+Show polished confirmation:
+
+# Thanks — your GIO enquiry is on its way.
+
+Our team can now follow up regarding the product you selected.
+
+Display:
+
+Selected product thumbnail
+
+Product name
+
+Reference number
+
+Button:
+
+CONTINUE BROWSING
+
+---
+
+# DATABASE ENQUIRY
+
+Save every enquiry in MySQL.
+
+Statuses:
+
+New
+
+Contact Attempted
+
+Contacted
+
+Quote Sent
+
+Follow-Up
+
+Converted
+
+Closed
+
+Spam
+
+---
+
+# EMAIL NOTIFICATION
+
+Send enquiry to configured business email.
+
+Subject example:
+
+**New Product Enquiry – GIO Titan Premium – John Smith**
+
+Email should contain:
+
+Lead reference
+
+Customer details
+
+Product
+
+SKU
+
+Variant
+
+Colour
+
+Price shown
+
+Message
+
+Source URL
+
+UTM data
+
+Submission time
+
+Admin dashboard link if configured safely.
+
+---
+
+# CUSTOMER ACKNOWLEDGEMENT EMAIL
+
+Send professional branded confirmation.
+
+Do NOT promise that order is confirmed.
+
+Say:
+
+“We've received your product enquiry.”
+
+Not:
+
+“Your order has been placed.”
+
+---
+
+# SMTP
+
+Create SMTP-ready mailing.
+
+Configurable admin/settings:
+
+SMTP Host
+
+SMTP Port
+
+SMTP Username
+
+SMTP Password securely handled
+
+Encryption
+
+From Email
+
+Notification Email
+
+From Name
+
+Do not expose SMTP credentials in public files.
+
+Prefer configuration outside public web root where hosting allows.
+
+---
+
+# PRODUCT DETAIL CONTENT TABS
+
+Create premium tabs/accordions:
+
+Overview
+
+Features
+
+Specifications
+
+Performance
+
+Dimensions
+
+What's Included
+
+Available Options
+
+Shipping Information
+
+Warranty Information
+
+Downloads
+
+FAQs
+
+---
+
+# PRODUCT SPECIFICATIONS
+
+Admin must be able to add unlimited spec groups.
+
+Example:
+
+Performance:
+
+Top Speed
+
+Range
+
+Recommended Capacity
+
+Incline
+
+Recharge Time
+
+Battery:
+
+Battery Type
+
+Voltage
+
+Capacity
+
+Charging
+
+Dimensions:
+
+Overall Length
+
+Width
+
+Seat Width
+
+Ground Clearance
+
+Turning Radius
+
+Do not hard-code specs into templates.
+
+---
+
+# PRODUCT VIDEOS
+
+Allow:
+
+YouTube URL
+
+Vimeo if desired
+
+Uploaded poster image
+
+Video thumbnail
+
+Product gallery can contain both:
+
+Images
+
+Videos
+
+Lazy-load third-party videos.
+
+---
+
+# RELATED PRODUCTS
+
+Each detail page should show:
+
+You May Also Like
+
+Maximum 4 products.
+
+---
+
+# DEMO DATA – 10 PRODUCTS
+
+Seed the database with 10 DEMO product entries based on current GIO Mobility categories.
+
+Use current official product information only where verified.
+
+Suggested demo catalogue:
+
+1. GIO Titan Premium – Blue
+2. GIO Titan Premium – Red
+3. GIO Tron PRO – Blue
+4. GIO Tron PRO – Red
+5. GIO Tetris PRO – Blue
+6. GIO Tetris PRO – Red
+7. GIO All-Season Enclosed Mobility Scooter – Blue
+8. GIO All-Season Enclosed Mobility Scooter – Silver
+9. GIO All-Season Enclosed Mobility Scooter – Limited Edition Green
+10. GIO Nimbus Folding Mobility Walker
+
+IMPORTANT:
+
+These are seed/demo records.
+
+Before final production deployment, verify:
+
+Prices
+
+Specifications
+
+Availability
+
+Colours
+
+Model naming
+
+Shipping
+
+Warranty
+
+Descriptions
+
+with current official GIO data/client.
+
+Do not invent missing specifications.
+
+---
+
+# DEMO PRODUCT IMAGES
+
+For demonstration:
+
+Use authorized images from the client/current GIO asset library whenever supplied.
+
+If real product images are not yet supplied:
+
+Use clearly designated generic demo mobility imagery temporarily.
+
+DO NOT AI-generate a product that visually looks different and label it as an exact GIO model.
+
+Placeholder/demo imagery must be replaceable from admin.
+
+---
+
+# PRODUCT COLLECTION PAGE
+
+Create:
+
+/shop
+
+Filters:
+
+Product Type
+
+Wheel Configuration
+
+Price
+
+Availability
+
+Range
+
+Capacity
+
+Features
+
+Colour
+
+Sorting:
+
+Featured
+
+Best Selling
+
+Newest
+
+Price Low to High
+
+Price High to Low
+
+Alphabetical
+
+Use AJAX-style/filter interactions where practical using vanilla JS + PHP endpoints.
+
+URL should remain shareable/search-friendly where possible.
+
+---
+
+# CATEGORY PAGES
+
+Create:
+
+All Mobility Products
+
+3-Wheel Mobility
+
+4-Wheel Mobility
+
+All-Season Enclosed
+
+Mobility Walkers
+
+Parts & Accessories
+
+New Arrivals
+
+Best Sellers
+
+---
+
+# SEARCH
+
+Create instant product search.
+
+Search:
+
+Product title
+
+SKU
+
+Keywords
+
+Category
+
+Features
+
+Display suggestions while typing.
+
+Search results page required.
+
+---
+
+# WISHLIST
+
+Create simple wishlist.
+
+For guests:
+
+localStorage
+
+Optional database persistence for logged-in admin/customer system later.
+
+No customer account system is required for initial enquiry version unless specifically requested.
+
+---
+
+# PRODUCT COMPARISON
+
+Allow:
+
+Add to Compare
+
+Maximum 3 models.
+
+Sticky compare tray.
+
+Comparison page.
+
+Highlight specification differences elegantly.
+
+---
+
+# ADMIN PANEL
+
+Create secure:
+
+# /admin/
+
+Login page should itself look premium.
+
+---
+
+# ADMIN DASHBOARD
+
+Display:
+
+New Enquiries
+
+Today's Enquiries
+
+Total Products
+
+Published Products
+
+Out of Stock
+
+New Arrivals
+
+Best Sellers
+
+Total Categories
+
+Recent Enquiries
+
+Top Enquired Products
+
+Enquiry trend chart
+
+Lead source breakdown
+
+---
+
+# ADMIN PRODUCT MANAGEMENT
+
+Admin must be able to:
+
+Add Product
+
+Edit Product
+
+Delete/Archive Product
+
+Duplicate Product
+
+Publish/Unpublish
+
+Upload unlimited product images
+
+Reorder product images with sort ordering
+
+Set featured image
+
+Add videos
+
+Add categories
+
+Add tags
+
+Set price
+
+Compare price
+
+SKU
+
+Colour variants
+
+Stock status
+
+Availability text
+
+Short description
+
+Long description
+
+Features
+
+Specifications
+
+Performance
+
+Dimensions
+
+Downloads
+
+FAQs
+
+SEO metadata
+
+Featured
+
+Best Seller
+
+New Arrival
+
+Sort priority
+
+Related products
+
+---
+
+# IMAGE MANAGEMENT
+
+Admin upload must:
+
+Validate file type
+
+Validate file size
+
+Rename securely
+
+Generate thumbnails where possible
+
+Create responsive versions
+
+Support WebP conversion where environment supports it
+
+Store alt text
+
+Allow image ordering
+
+Delete images safely
+
+Do not delete shared assets accidentally.
+
+---
+
+# ADMIN ENQUIRIES
+
+Create professional lead CRM table.
+
+Columns:
+
+Reference
+
+Date
+
+Customer
+
+Phone
+
+Email
+
+Product
+
+Variant
+
+Province
+
+Source
+
+Status
+
+Assigned Notes
+
+Actions
+
+Open enquiry detail page.
+
+Admin actions:
+
+Change status
+
+Add internal note
+
+Copy email
+
+Copy phone
+
+Reply via email link
+
+Download/print enquiry
+
+Export CSV
+
+Delete/archive
+
+Filter by:
+
+Date
+
+Status
+
+Product
+
+Province
+
+Source
+
+Search
+
+---
+
+# EMAIL + ADMIN BOTH ARE MANDATORY
+
+Every genuine enquiry must:
+
+# 1. SAVE IN MYSQL
+
+# 2. APPEAR IN ADMIN
+
+# 3. SEND EMAIL NOTIFICATION
+
+If email fails:
+
+The database enquiry MUST still be saved.
+
+Store:
+
+email_delivery_status
+
+and show warning to admin.
+
+Never lose a lead simply because SMTP fails.
+
+---
+
+# ADMIN EMAIL SETTINGS
+
+Configure:
+
+Main enquiry email
+
+Secondary CC email optional
+
+SMTP
+
+Customer auto-response
+
+Enable/disable acknowledgement
+
+Email footer
+
+---
+
+# ADMIN BANNER MANAGEMENT
+
+Admin can manage homepage banners.
+
+Fields:
+
+Desktop Image
+
+Mobile Image
+
+Eyebrow
+
+Headline
+
+Subheading
+
+CTA 1
+
+CTA URL
+
+CTA 2
+
+CTA URL
+
+Text Alignment
+
+Overlay setting
+
+Active
+
+Schedule Start
+
+Schedule End
+
+---
+
+# GENERATE INITIAL DEMO BANNERS
+
+Generate approximately:
+
+# 3 PREMIUM DEMO BANNERS
+
+until real campaign assets are provided.
+
+## Banner 1
+
+Theme:
+
+Freedom / Canadian lifestyle
+
+Copy:
+
+**Go Further. Live Freely.**
+
+## Banner 2
+
+Theme:
+
+All-season mobility
+
+Copy:
+
+**Comfort Beyond the Forecast.**
+
+## Banner 3
+
+Theme:
+
+Modern technology and independence
+
+Copy:
+
+**Mobility Designed Around You.**
+
+Generate separate:
+
+Desktop 1920 × approximately 800/900
+
+Mobile 1080 × 1350 or suitable responsive crop
+
+Do not place critical subjects where text overlays make the image unreadable.
+
+---
+
+# BANNER IMAGE GENERATION STYLE
+
+Photorealistic
+
+Premium Canadian setting
+
+Natural lighting
+
+Editorial commercial photography
+
+Sophisticated
+
+Positive
+
+Independent lifestyle
+
+Never make senior customers look helpless or pitiful.
+
+Mobility should be presented as:
+
+Freedom
+
+Confidence
+
+Lifestyle
+
+Independence
+
+---
+
+# ABOUT GIO PAGE
+
+Create premium storytelling page.
+
+Sections:
+
+Brand introduction
+
+GIO philosophy
+
+Canadian positioning
+
+Product design approach
+
+Customer feedback philosophy
+
+Comfort
+
+Functionality
+
+Support
+
+Mobility independence
+
+Timeline only if real dates are verified
+
+CTA
+
+Use current official information as factual baseline.
+
+---
+
+# WHY GIO PAGE
+
+Create sections around verified differentiators.
+
+Do not make unsupported “best” or superiority claims.
+
+Use visual comparisons carefully.
+
+---
+
+# SUPPORT HUB
+
+Create:
+
+FAQ
+
+Ordering Guide
+
+Warranty
+
+Shipping
+
+Product Manuals
+
+Parts & Accessories
+
+Contact Support
+
+---
+
+# PRODUCT MANUALS
+
+Admin can upload PDF manuals.
+
+Product page automatically shows relevant manual.
+
+Fields:
+
+Manual Title
+
+Product
+
+Language
+
+Version
+
+PDF
+
+Published Date
+
+---
+
+# FAQ SYSTEM
+
+Admin-managed FAQs.
+
+Categories:
+
+General
+
+Ordering
+
+Product
+
+Shipping
+
+Warranty
+
+Assembly
+
+Charging
+
+Maintenance
+
+Enquiries
+
+FAQs can be linked to specific product.
+
+---
+
+# BLOG / BUYING GUIDES
+
+Create complete blog CMS.
+
+Categories:
+
+Buying Guides
+
+Mobility Education
+
+Product Updates
+
+GIO News
+
+Maintenance
+
+Lifestyle
+
+Admin:
+
+Create/Edit/Delete
+
+Featured image
+
+SEO
+
+Related products
+
+Publish scheduling
+
+---
+
+# REVIEWS
+
+Create reviews/gallery section.
+
+Use real reviews only.
+
+Do NOT fabricate testimonials during demo.
+
+If real review data has not been supplied:
+
+Create interface and display:
+
+“Customer stories coming soon”
+
+or use only approved current review content.
+
+Admin can manage:
+
+Name
+
+Rating
+
+Review
+
+Product
+
+Photo
+
+Video
+
+Source
+
+External source link
+
+Publish status
+
+---
+
+# SEO
+
+Build technical SEO.
+
+Every page:
+
+Unique Title
+
+Meta Description
+
+Canonical
+
+Open Graph
+
+Twitter/X metadata
+
+H1
+
+Semantic structure
+
+Image alt
+
+Breadcrumbs
+
+Internal links
+
+Clean URL
+
+XML sitemap
+
+robots.txt
+
+---
+
+# PRODUCT SEO
+
+Use:
+
+Product schema
+
+Offer only when pricing/status accurately represent current information
+
+BreadcrumbList
+
+Organization
+
+WebSite
+
+SearchAction where valid
+
+FAQPage where appropriate
+
+Article
+
+VideoObject
+
+Do not fabricate:
+
+Ratings
+
+Availability
+
+Pricing
+
+Reviews
+
+---
+
+# SEO URL EXAMPLES
+
+/shop
+
+/product/gio-titan-premium
+
+/product/gio-tron-pro
+
+/product/gio-tetris-pro
+
+/product/gio-all-season-enclosed
+
+/category/4-wheel-mobility
+
+/best-sellers
+
+/new-arrivals
+
+/support
+
+/blog/choosing-a-mobility-scooter
+
+---
+
+# CANADIAN EXPERIENCE
+
+Currency:
+
+CAD
+
+Store currency formatting:
+
+$2,595 CAD
+
+Add province selector where useful.
+
+Use Canadian English.
+
+Do not automatically make legal/regulatory statements valid across Canada unless verified.
+
+Where regulations vary:
+
+Use clear wording encouraging customers to verify local requirements.
+
+---
+
+# RESPONSIVE DESIGN
+
+PERFECT RESPONSIVENESS IS MANDATORY.
+
+Test at minimum:
+
+320px
+
+360px
+
+375px
+
+390px
+
+414px
+
+768px
+
+1024px
+
+1280px
+
+1366px
+
+1440px
+
+1920px
+
+No horizontal scrolling.
+
+No overlapping text.
+
+No broken cards.
+
+No buttons outside viewport.
+
+---
+
+# MOBILE PRODUCT PAGE
+
+Mobile experience:
+
+Large swipeable gallery
+
+Image dots
+
+Product title
+
+Price/availability
+
+Colour selector
+
+Key specs
+
+Sticky bottom:
+
+# BUY NOW
+
+Optional:
+
+CALL US
+
+Keep Buy Now always accessible without covering content.
+
+---
+
+# ANIMATIONS
+
+Create premium motion throughout.
+
+Use:
+
+Hero text reveal
+
+Smooth scroll
+
+Fade-up
+
+Masked image reveal
+
+Card stagger
+
+Scroll-triggered sections
+
+Animated counters
+
+Image zoom
+
+Product card hover
+
+Arrow animations
+
+Button microinteractions
+
+Mega-menu transition
+
+Mobile menu transition
+
+Accordion animations
+
+Modal transitions
+
+Gallery transitions
+
+Slider transitions
+
+Compare drawer animation
+
+Loading skeletons
+
+Subtle parallax
+
+Do NOT overanimate.
+
+Animation performance target:
+
+60fps on modern devices where possible.
+
+Use CSS transforms and opacity.
+
+Respect:
+
+`prefers-reduced-motion`.
+
+---
+
+# BUTTON DESIGN
+
+Primary:
+
+Dark/brand-red premium solid button.
+
+Secondary:
+
+Outlined.
+
+Hover:
+
+Subtle background change
+
+Arrow slides slightly
+
+Tiny elevation
+
+No cheesy glowing neon.
+
+---
+
+# MICROINTERACTIONS
+
+Examples:
+
+Wishlist heart reacts
+
+Product thumbnail border transition
+
+Colour selector confirmation
+
+Form validation animation
+
+Success check animation
+
+Search suggestions smooth appear
+
+Filter chips
+
+Accordion icon rotates
+
+---
+
+# PAGE TRANSITIONS
+
+Use extremely subtle transitions.
+
+Do not delay navigation.
+
+Performance > animation.
+
+---
+
+# ACCESSIBILITY
+
+Aim for WCAG AA fundamentals.
+
+Use:
+
+Contrast
+
+Focus states
+
+Keyboard navigation
+
+ARIA labels where necessary
+
+Form labels
+
+Alt text
+
+Accessible modal focus trap
+
+ESC closes modal
+
+Reduced motion
+
+Large tap targets
+
+Readable font sizes
+
+---
+
+# PERFORMANCE
+
+Website must feel extremely fast.
+
+Use:
+
+WebP / AVIF where appropriate
+
+Responsive srcset
+
+Lazy loading
+
+Hero preload
+
+Dimensions on images
+
+Minified CSS/JS for production
+
+No unnecessary plugins
+
+Browser caching
+
+Database indexes
+
+Pagination
+
+Optimized queries
+
+Third-party script lazy-loading
+
+---
+
+# DATABASE TABLES
+
+Create normalized tables such as:
+
+admins
+
+products
+
+product_images
+
+product_variants
+
+product_specs
+
+product_features
+
+product_videos
+
+categories
+
+product_categories
+
+product_faqs
+
+enquiries
+
+enquiry_notes
+
+banners
+
+reviews
+
+posts
+
+post_categories
+
+faqs
+
+manuals
+
+settings
+
+seo_meta
+
+activity_logs
+
+---
+
+# SECURITY
+
+Mandatory:
+
+PDO prepared statements
+
+Password hashing
+
+CSRF tokens
+
+Secure sessions
+
+Admin login throttling
+
+Server-side validation
+
+Output escaping
+
+Secure upload validation
+
+MIME checks
+
+File extension checks
+
+Randomized upload filenames
+
+Session regeneration
+
+Honeypot
+
+Spam rate limiting
+
+Basic bot protection
+
+Do not rely only on JavaScript validation.
+
+---
+
+# PRIVACY
+
+Lead form collects personal contact information.
+
+Create:
+
+Privacy Policy
+
+Terms
+
+Accessibility page if desired
+
+Cookie notice where necessary
+
+Consent wording
+
+Data retention settings in admin
+
+Do not collect unnecessary sensitive health/medical details.
+
+---
+
+# FOOTER
+
+Premium large footer.
+
+Columns:
+
+SHOP
+
+All Products
+
+3-Wheel
+
+4-Wheel
+
+Enclosed
+
+Walkers
+
+Parts
+
+SUPPORT
+
+FAQs
+
+Ordering Guide
+
+Warranty
+
+Shipping
+
+Manuals
+
+Contact
+
+ABOUT
+
+About GIO
+
+Why GIO
+
+Customer Stories
+
+Blog
+
+CONTACT
+
+Phone
+
+Email
+
+Business information
+
+Social icons
+
+Newsletter optionally
+
+Bottom:
+
+Copyright
+
+Privacy
+
+Terms
+
+---
+
+# ERROR PAGES
+
+Design custom:
+
+404
+
+500
+
+Maintenance
+
+No Products Found
+
+Search Empty State
+
+Form Error
+
+---
+
+# LOADING STATES
+
+Use:
+
+Skeleton cards
+
+Image loading placeholder
+
+Button submission spinner
+
+Prevent double form submission.
+
+---
+
+# TESTING IS MANDATORY
+
+Do NOT simply code and claim it works.
+
+Perform full testing before final delivery.
+
+---
+
+# TEST PRODUCT FLOW
+
+Test all 10 demo products:
+
+Homepage card
+→ Product detail
+→ Image thumbnails
+→ Zoom
+→ Colour selection
+→ Buy Now
+→ Lead modal
+→ Validation
+→ Submit
+→ Database entry
+→ Admin listing
+→ Admin enquiry detail
+→ Email trigger
+→ Customer acknowledgement
+→ Success state
+
+---
+
+# FORM TESTING
+
+Test:
+
+Empty form
+
+Invalid email
+
+Invalid phone
+
+Valid form
+
+Very long message
+
+Special characters
+
+Duplicate click
+
+Spam/honeypot
+
+CSRF failure
+
+SMTP failure
+
+---
+
+# RESPONSIVE QA
+
+Check every page at all required viewport sizes.
+
+---
+
+# BROWSER QA
+
+Test:
+
+Chrome
+
+Edge
+
+Firefox
+
+Safari-compatible CSS behaviour
+
+Mobile browser behaviour
+
+---
+
+# ADMIN QA
+
+Test:
+
+Login
+
+Logout
+
+Wrong password
+
+Add product
+
+Edit product
+
+Upload images
+
+Delete image
+
+Product variants
+
+Publish/unpublish
+
+Best seller toggle
+
+New arrival toggle
+
+Banner
+
+Enquiries
+
+Lead status
+
+Notes
+
+Email settings
+
+Blog
+
+FAQ
+
+Manual upload
+
+---
+
+# DATABASE SEED
+
+Provide:
+
+database.sql
+
+with:
+
+Admin setup instructions
+
+10 demo products
+
+Demo categories
+
+Demo banners
+
+Demo specifications
+
+Demo FAQs
+
+Demo homepage configuration
+
+Do NOT store plaintext demo passwords permanently.
+
+Document first-login/admin-password setup securely.
+
+---
+
+# README
+
+Create complete:
+
+README.md
+
+Explain:
+
+Hosting requirements
+
+Database creation
+
+database.sql import
+
+config
+
+SMTP
+
+Admin login setup
+
+File permissions
+
+Upload folders
+
+Domain setup
+
+SSL
+
+Testing checklist
+
+Going-live checklist
+
+---
+
+# BACKUP
+
+Provide simple admin backup/export options where practical:
+
+Export enquiries CSV
+
+Export product data CSV
+
+Database backup guidance
+
+---
+
+# FINAL DELIVERY RULE
+
+Do NOT give me:
+
+Only HTML screenshots
+
+Only a homepage mock-up
+
+A Figma-only design
+
+Non-working forms
+
+Fake admin panel
+
+Static product cards
+
+Fake Buy Now button
+
+Lorem Ipsum
+
+Broken mobile design
+
+An unfinished template
+
+Deliver a COMPLETE WORKING PHP + MYSQL WEBSITE.
+
+---
+
+# FINAL EXPERIENCE TARGET
+
+When a Canadian visitor lands on the website they should immediately feel:
+
+“This is a premium, established, modern mobility brand.”
+
+The site must combine:
+
+# PREMIUM DESIGN
+
+*
+
+# LUXURY PRODUCT PRESENTATION
+
+*
+
+# PERFECT RESPONSIVENESS
+
+*
+
+# FAST PERFORMANCE
+
+*
+
+# MULTIPLE PRODUCT IMAGES
+
+*
+
+# HIGH-QUALITY IMAGE ZOOM
+
+*
+
+# E-COMMERCE-STYLE PRODUCT DISCOVERY
+
+*
+
+# ENQUIRY-BASED BUY NOW FLOW
+
+*
+
+# ADMIN CRM
+
+*
+
+# EMAIL NOTIFICATIONS
+
+*
+
+# SEO
+
+*
+
+# PROFESSIONAL ANIMATIONS
+
+*
+
+# SECURITY
+
+*
+
+# COMPLETE TESTING
+
+Use the client's genuine GIO product images and official data wherever provided.
+
+Temporary generated banners may be used for DEMO presentation only.
+
+Every temporary asset must be easily replaceable from the Admin Panel once final brand photography is supplied.
+
+The final website must be genuinely ready to demonstrate to a premium Canadian client.
