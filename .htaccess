@@ -1,0 +1,91 @@
+# ============================================================
+# GIO Mobility Canada — Apache configuration (cPanel compatible)
+# ============================================================
+
+Options -Indexes
+DirectoryIndex index.php
+
+# ---- Pretty URLs ----------------------------------------------------------
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS (uncomment on live server with SSL installed)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Existing files & directories are served directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SEO-friendly routes
+RewriteRule ^shop/?$              shop.php [L]
+RewriteRule ^product/([a-z0-9-]+)/?$  product.php?slug=$1 [L,QSA]
+RewriteRule ^category/([a-z0-9-]+)/?$ category.php?slug=$1 [L,QSA]
+RewriteRule ^best-sellers/?$      shop.php?badge=best [L,QSA]
+RewriteRule ^new-arrivals/?$      shop.php?badge=new [L,QSA]
+RewriteRule ^search/?$            search.php [L,QSA]
+RewriteRule ^compare/?$           compare.php [L]
+RewriteRule ^wishlist/?$          wishlist.php [L]
+RewriteRule ^about/?$             about.php [L]
+RewriteRule ^why-gio/?$           why-gio.php [L]
+RewriteRule ^stories/?$           stories.php [L]
+RewriteRule ^contact/?$           contact.php [L]
+RewriteRule ^blog/?$              blog.php [L]
+RewriteRule ^blog/([a-z0-9-]+)/?$ article.php?slug=$1 [L,QSA]
+RewriteRule ^support/?$           support/index.php [L]
+RewriteRule ^support/faqs/?$          support/faqs.php [L]
+RewriteRule ^support/ordering-guide/?$ support/ordering-guide.php [L]
+RewriteRule ^support/warranty/?$      support/warranty.php [L]
+RewriteRule ^support/shipping/?$      support/shipping.php [L]
+RewriteRule ^support/manuals/?$       support/manuals.php [L]
+RewriteRule ^privacy/?$           privacy.php [L]
+RewriteRule ^terms/?$             terms.php [L]
+RewriteRule ^accessibility/?$     accessibility.php [L]
+RewriteRule ^sitemap\.xml$        sitemap.php [L]
+</IfModule>
+
+# ---- Custom error pages ---------------------------------------------------
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+
+# ---- Protect sensitive files ----------------------------------------------
+<FilesMatch "^(config\.php|config\.local\.php|database\.php|database\.sql|README\.md)$">
+    Require all denied
+</FilesMatch>
+<FilesMatch "\.(sql|log|ini|sh|md)$">
+    Require all denied
+</FilesMatch>
+
+# ---- Security headers ------------------------------------------------------
+<IfModule mod_headers.c>
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# ---- Browser caching -------------------------------------------------------
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access plus 30 days"
+ExpiresByType image/jpeg "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+ExpiresByType image/svg+xml "access plus 7 days"
+ExpiresByType text/css "access plus 7 days"
+ExpiresByType application/javascript "access plus 7 days"
+ExpiresByType font/woff2 "access plus 30 days"
+</IfModule>
+
+# ---- Compression -----------------------------------------------------------
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
+
+# ---- PHP hardening (where supported) ---------------------------------------
+<IfModule mod_php.c>
+php_flag display_errors off
+php_value upload_max_filesize 10M
+php_value post_max_size 12M
+</IfModule>
