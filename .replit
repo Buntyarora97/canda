@@ -1,7 +1,7 @@
 modules = ["php-8.4"]
 [nix]
 channel = "stable-25_05"
-packages = ["unzip"]
+packages = ["unzip", "mariadb"]
 
 [workflows]
 runButton = "Project"

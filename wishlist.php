@@ -35,7 +35,7 @@ require __DIR__ . '/includes/header.php';
     let ids = [];
     try { ids = JSON.parse(localStorage.getItem('gio_wishlist') || '[]'); } catch (e) {}
     if (!ids.length) { grid.innerHTML = ''; empty.hidden = false; return; }
-    fetch('/api/compare.php?ids=' + ids.join(','))
+    fetch('api/compare.php?ids=' + ids.join(','))
       .then(r => r.json())
       .then(data => {
         const ps = data.products || [];
