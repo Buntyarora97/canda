@@ -178,8 +178,16 @@
   /* ---------------- wishlist (localStorage) ---------------- */
   const WL_KEY = 'gio_wishlist';
   const CP_KEY = 'gio_compare';
+  const CART_KEY = 'gio_enquiry_cart';
   const getList = (k) => { try { return JSON.parse(localStorage.getItem(k)) || []; } catch (e) { return []; } };
   const setList = (k, v) => localStorage.setItem(k, JSON.stringify(v));
+
+  function refreshCartUI() {
+    const cart = getList(CART_KEY);
+    const badge = $('#cartCount');
+    if (badge) { badge.hidden = cart.length === 0; badge.textContent = cart.length; }
+  }
+  refreshCartUI();
 
   function refreshWishlistUI() {
     const list = getList(WL_KEY);
@@ -310,6 +318,11 @@
         const data = await res.json();
         if (!data.ok) throw new Error('not found');
         const p = data.product;
+        const cart = getList(CART_KEY).filter((item) => item.id !== p.id);
+        cart.unshift({ id: p.id, name: p.name, thumb: p.thumb, colour: opts.colour || p.default_colour || '', variant: opts.variant || '' });
+        setList(CART_KEY, cart.slice(0, 5));
+        refreshCartUI();
+        toast('Added to your enquiry cart');
         $('#fProductId').value = p.id;
         $('#fColour').value = (opts.colour || p.default_colour || '');
         $('#fVariant').value = (opts.variant || '');
@@ -362,6 +375,11 @@
       });
     }
     if (e.target.closest('[data-enquire-general]')) openEnquiry(null);
+    if (e.target.closest('[data-cart-open]')) {
+      const cart = getList(CART_KEY);
+      if (cart[0]) openEnquiry(cart[0].id, { colour: cart[0].colour, variant: cart[0].variant });
+      else openEnquiry(null);
+    }
   });
 
   /* focus trap */

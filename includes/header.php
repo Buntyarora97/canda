@@ -99,6 +99,10 @@ $headerSchemas = $GLOBALS['schemas'] ?? [];
             <button class="icon-btn" id="searchOpen" aria-label="Search products">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
             </button>
+            <button class="icon-btn" id="cartOpen" data-cart-open aria-label="Open enquiry cart">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h2l1.6 10.2a2 2 0 0 0 2 1.8h7.8a2 2 0 0 0 2-1.7L21 8H7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.2" fill="currentColor"/><circle cx="18" cy="20" r="1.2" fill="currentColor"/></svg>
+                <span class="count-badge" id="cartCount" hidden>0</span>
+            </button>
             <a class="icon-btn" href="<?= e(site_url('wishlist')) ?>" aria-label="Wishlist">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20s-7.2-4.6-9.2-9C1.4 8 3 5 6.2 5c2 0 3.4 1.1 4.1 2.3h1.4C12.4 6.1 13.8 5 15.8 5 19 5 20.6 8 21.2 11c-2 4.4-9.2 9-9.2 9z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
                 <span class="count-badge" id="wishlistCount" hidden>0</span>

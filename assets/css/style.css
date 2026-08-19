@@ -849,6 +849,8 @@ body{background:#fff}
 .main-nav>ul>li>a{font-size:.78rem;letter-spacing:.075em}
 .main-nav>ul>li>a:hover{color:var(--voltiva-red)}
 .header-actions .icon-btn:hover{background:#fff1f2;color:var(--voltiva-red)}
+.header-actions #cartOpen{color:var(--voltiva-blue)}
+.header-actions #cartOpen:hover{background:#edf5fb;color:var(--voltiva-blue)}
 .btn{border-radius:8px;letter-spacing:.055em}
 .btn-primary{background:linear-gradient(135deg,var(--voltiva-red),#ef3641);box-shadow:0 7px 18px rgba(213,31,42,.12)}
 .btn-primary:hover{background:linear-gradient(135deg,var(--voltiva-red-dark),var(--voltiva-red));box-shadow:0 12px 26px rgba(213,31,42,.27)}
