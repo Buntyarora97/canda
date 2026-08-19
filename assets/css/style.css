@@ -815,3 +815,100 @@ p{margin:0 0 1em}
   .reveal{opacity:1;transform:none}
   .hero-media img{animation:none;transform:none}
 }
+
+/* ============================================================
+   Voltiva refresh — expressive red / electric-blue storefront layer
+   ============================================================ */
+:root{
+  --voltiva-red:#d51f2a;
+  --voltiva-red-dark:#a9141d;
+  --voltiva-blue:#1b5c96;
+  --voltiva-ink:#101820;
+  --voltiva-mist:#f3f6f8;
+  --voltiva-glow:0 18px 55px rgba(213,31,42,.18);
+}
+body{background:#fff}
+.announcement{
+  position:relative;overflow:hidden;
+  background:linear-gradient(90deg,#101820,#1a2934 50%,#101820);
+  color:#e9f4fb;padding:.68em 1em;font-size:.7rem;letter-spacing:.16em;
+}
+.announcement::after{
+  content:"";position:absolute;inset:0;opacity:.22;
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.32),transparent 60%);
+  transform:translateX(-100%);animation:announcementSweep 5s ease-in-out infinite;
+}
+.announcement-pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#54c7ff;margin-right:8px;box-shadow:0 0 0 5px rgba(84,199,255,.12);vertical-align:1px;animation:pulse 2s infinite}
+@keyframes announcementSweep{50%,100%{transform:translateX(100%)}}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(84,199,255,0)}}
+.site-header{background:rgba(255,255,255,.96);border-bottom-color:#e7edf1}
+.site-header.is-scrolled{box-shadow:0 8px 28px rgba(16,24,32,.12)}
+.brand{gap:12px}
+.brand .brand-logo-voltiva{width:96px;height:64px;margin:-12px 0}
+.brand-tag{color:var(--voltiva-blue);font-size:.57rem}
+.main-nav>ul>li>a{font-size:.78rem;letter-spacing:.075em}
+.main-nav>ul>li>a:hover{color:var(--voltiva-red)}
+.header-actions .icon-btn:hover{background:#fff1f2;color:var(--voltiva-red)}
+.btn{border-radius:8px;letter-spacing:.055em}
+.btn-primary{background:linear-gradient(135deg,var(--voltiva-red),#ef3641);box-shadow:0 7px 18px rgba(213,31,42,.12)}
+.btn-primary:hover{background:linear-gradient(135deg,var(--voltiva-red-dark),var(--voltiva-red));box-shadow:0 12px 26px rgba(213,31,42,.27)}
+.btn-outline{border-color:#a9b6bf}
+.btn-outline:hover{background:var(--voltiva-ink);border-color:var(--voltiva-ink)}
+.hero{min-height:min(760px,88vh);background:#13202a}
+.hero::after{background:linear-gradient(90deg,rgba(10,19,27,.88) 0%,rgba(10,19,27,.65) 36%,rgba(10,19,27,.08) 78%),linear-gradient(0deg,rgba(10,19,27,.32),transparent 45%)}
+.hero-content{max-width:700px;padding:clamp(72px,11vw,148px) 0}
+.hero h1{font-size:clamp(2.8rem,6.4vw,5.7rem);line-height:.99;letter-spacing:-.055em;text-wrap:balance;text-shadow:0 4px 28px rgba(0,0,0,.2)}
+.hero-sub{max-width:54ch;line-height:1.7}
+.hero .eyebrow{color:#73d2ff;background:rgba(27,92,150,.34);border-color:rgba(115,210,255,.55)}
+.hero-trust{gap:12px}
+.hero-trust span{padding:8px 12px;border:1px solid rgba(255,255,255,.18);border-radius:100px;background:rgba(255,255,255,.06)}
+.section{position:relative}
+.section:nth-of-type(even)::before{content:"";position:absolute;top:0;left:50%;width:72px;height:4px;background:var(--voltiva-red);transform:translateX(-50%);border-radius:99px}
+.section-alt{background:linear-gradient(180deg,#f7fafc,#eef3f6)}
+.section-head{margin-bottom:clamp(34px,4vw,58px)}
+.section-head h2{font-size:clamp(2rem,3.8vw,3.15rem);letter-spacing:-.05em}
+.section-head h2::after{content:"";display:block;width:42px;height:4px;margin-top:14px;border-radius:5px;background:var(--voltiva-red)}
+.section-head .lead{font-size:1.02rem}
+.head-link{color:var(--voltiva-red)}
+.cat-card{border-radius:20px;box-shadow:0 10px 30px rgba(16,24,32,.1)}
+.cat-card::after{background:linear-gradient(180deg,transparent 30%,rgba(10,18,24,.9))}
+.cat-card-body{padding:28px}
+.cat-card:hover{box-shadow:0 18px 42px rgba(16,24,32,.2)}
+.product-grid{gap:24px}
+.product-card{border-radius:18px;border-color:#e1e9ee;box-shadow:0 5px 18px rgba(16,24,32,.04)}
+.product-card:hover{box-shadow:0 18px 42px rgba(16,24,32,.14);transform:translateY(-8px)}
+.card-media{background:linear-gradient(145deg,#f9fbfc,#edf3f6)}
+.card-img-wrap{padding:7%}
+.card-badge{border-radius:7px;background:var(--voltiva-ink);letter-spacing:.1em}
+.badge-best-seller{background:var(--voltiva-red);box-shadow:0 5px 13px rgba(213,31,42,.25)}
+.card-wish{border:1px solid #edf0f2}
+.card-wish:hover,.card-wish.active{color:var(--voltiva-red)}
+.card-body{padding:22px}
+.card-title{font-size:1.12rem}
+.card-price{font-size:1.18rem}
+.card-specs{gap:9px 14px}
+.card-actions .btn{min-height:44px}
+.need-card,.why-card,.support-card,.review-card,.step,.article-card{border-radius:18px;border-color:#e1e9ee;box-shadow:0 5px 18px rgba(16,24,32,.035)}
+.need-card:hover,.support-card:hover{border-color:var(--voltiva-red);box-shadow:var(--voltiva-glow)}
+.need-card .need-icon,.why-card .need-icon,.support-card .need-icon{background:#edf5fb;color:var(--voltiva-blue)}
+.story-media{border-radius:22px;box-shadow:0 22px 60px rgba(0,0,0,.22)}
+.compare-module{border-radius:20px;box-shadow:0 10px 30px rgba(16,24,32,.06)}
+.compare-select select,.compare-selects select{width:100%;padding:.75em .9em;border:1px solid #dce5eb;border-radius:9px;background:#f8fafb;font:inherit}
+.lifestyle{border-radius:22px;box-shadow:0 20px 55px rgba(16,24,32,.16)}
+.site-footer{background:linear-gradient(145deg,#101820,#172733)}
+.footer-logo{background:#fff!important}
+.cookie-notice{border-radius:18px;border-color:#dbe4e9;box-shadow:0 18px 45px rgba(16,24,32,.2)}
+.enquiry-modal .modal-panel{border-radius:22px;border-top:5px solid var(--voltiva-red)}
+.modal-product{background:linear-gradient(135deg,#f4f8fa,#eaf2f7)}
+.modal-product img{border:1px solid #dbe6ec}
+.success-check svg circle,.success-check svg path{stroke:var(--voltiva-red)}
+.reveal{transform:translateY(32px) scale(.985)}
+.reveal.in{transform:none}
+@media (max-width:720px){
+  .hero{min-height:82vh}
+  .hero-content{padding:70px 0}
+  .hero h1{font-size:clamp(2.7rem,13vw,4.2rem)}
+  .section-head h2{font-size:2.2rem}
+  .brand .brand-logo-voltiva{width:84px;height:58px}
+  .card-body{padding:16px}
+}

@@ -34,4 +34,4 @@ if ! mariadb --socket="$SOCKET" -ugio -pgio_test_pass -h127.0.0.1 -P"$PORT" gio_
   mariadb --socket="$SOCKET" -ugio -pgio_test_pass -h127.0.0.1 -P"$PORT" gio_mobility < database.sql
 fi
 
-exec php -S 0.0.0.0:5000
+exec php -S 0.0.0.0:5000 replit-router.php

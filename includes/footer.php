@@ -106,7 +106,7 @@ $storeAddress = setting('store_address', 'Unit 1 - 11400 Twigg Place, Richmond, 
 
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-<script src="<?= e(site_url('assets/js/main.js')) ?>?v=1.0.0" defer></script>
+<script src="<?= e(site_url('assets/js/main.js')) ?>?v=1.1.0" defer></script>
 <?php if (!empty($GLOBALS['page_js'])): ?>
 <script src="<?= e(site_url('assets/js/' . $GLOBALS['page_js'])) ?>?v=1.0.0" defer></script>
 <?php endif; ?>
