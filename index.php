@@ -14,6 +14,7 @@ $heroImgM  = $hero && $hero['mobile_image'] ? img_url($hero['mobile_image'], 'ba
 $bestSellers = list_products(['best_seller' => true, 'limit' => 12]);
 $newArrivals = list_products(['new_arrival' => true, 'limit' => 12]);
 $featured    = list_products(['featured' => true, 'limit' => 1])[0] ?? ($bestSellers[0] ?? null);
+$heroProductImg = $featured ? product_primary_image((int)$featured['id']) : null;
 $categories  = list_categories();
 $reviews     = rows('SELECT r.*, p.name AS product_name FROM reviews r LEFT JOIN products p ON p.id = r.product_id WHERE r.is_published = 1 ORDER BY r.sort_order, r.id LIMIT 9');
 $posts       = rows('SELECT p.*, (SELECT c.name FROM post_categories c JOIN post_category_map m ON m.category_id = c.id AND m.post_id = p.id LIMIT 1) AS cat_name FROM posts p WHERE p.is_published = 1 ORDER BY p.published_at DESC LIMIT 3');
@@ -28,25 +29,44 @@ require __DIR__ . '/includes/header.php';
 ?>
 
 <!-- ============ 1. HERO ============ -->
-<section class="hero">
+<section class="hero hero-luxury" data-luxury-hero>
     <div class="hero-media">
         <img src="<?= e($heroImg) ?>" srcset="<?= e($heroImgM) ?> 800w, <?= e($heroImg) ?> 1920w"
              sizes="100vw" alt="<?= e($hero['headline'] ?? 'GIO mobility scooter in a Canadian neighbourhood') ?>" fetchpriority="high">
     </div>
+    <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+    <div class="hero-grid-lines" aria-hidden="true"></div>
     <div class="container hero-content">
-        <span class="eyebrow reveal"><?= e($hero['eyebrow'] ?? 'Mobility, Reimagined.') ?></span>
-        <h1 class="reveal" data-delay="1"><?= e($hero['headline'] ?? 'Go Further. Live Freely.') ?></h1>
-        <p class="hero-sub reveal" data-delay="2"><?= e($hero['subheading'] ?? 'Discover stylish, thoughtfully designed mobility solutions made for comfort, confidence and everyday independence.') ?></p>
-        <div class="hero-ctas reveal" data-delay="3">
+        <span class="eyebrow hero-kicker"><?= e($hero['eyebrow'] ?? 'Mobility, Reimagined.') ?></span>
+        <h1 class="hero-title"><?= e($hero['headline'] ?? 'Go Further. Live Freely.') ?></h1>
+        <p class="hero-sub hero-copy"><?= e($hero['subheading'] ?? 'Discover stylish, thoughtfully designed mobility solutions made for comfort, confidence and everyday independence.') ?></p>
+        <div class="hero-ctas hero-buttons">
             <a class="btn btn-primary btn-lg" href="<?= eurl($hero['cta1_url'] ?? '/shop') ?>"><?= e($hero['cta1_text'] ?? 'Explore Mobility') ?></a>
             <a class="btn btn-outline-light btn-lg" href="<?= eurl($hero['cta2_url'] ?? '/shop') ?>"><?= e($hero['cta2_text'] ?? 'Find Your GIO') ?></a>
         </div>
-        <div class="hero-trust reveal" data-delay="4">
+        <div class="hero-trust hero-trust-luxury">
             <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Canadian designed</span>
             <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> 12-month parts warranty</span>
             <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Canada-wide delivery</span>
         </div>
     </div>
+    <?php if ($featured && $heroProductImg): ?>
+    <div class="hero-product-stage" aria-label="<?= e($featured['name']) ?>">
+        <div class="hero-product-halo" aria-hidden="true"></div>
+        <div class="hero-product-card">
+            <div class="hero-product-card-top"><span class="hero-product-label">Featured ride</span><span class="hero-product-live"><i></i> In stock</span></div>
+            <div class="hero-product-image-wrap"><img class="hero-product-image" src="<?= e(img_url($heroProductImg['file'])) ?>" alt="<?= e($heroProductImg['alt'] ?? $featured['name']) ?>"></div>
+            <div class="hero-product-info">
+                <div><span class="hero-product-kicker">GIO signature series</span><h2><?= e($featured['name']) ?></h2></div>
+                <a class="hero-product-arrow" href="<?= e(product_url($featured)) ?>" aria-label="View <?= e($featured['name']) ?>"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+        </div>
+        <div class="hero-float-chip chip-range"><span class="chip-icon">↗</span><span><b>50 km</b><small>range</small></span></div>
+        <div class="hero-float-chip chip-comfort"><span class="chip-icon">✦</span><span><b>Premium</b><small>comfort</small></span></div>
+    </div>
+    <?php endif; ?>
+    <span class="hero-scroll-cue"><span class="hero-scroll-line"></span> Scroll to explore</span>
 </section>
 
 <!-- ============ 2. CATEGORY DISCOVERY ============ -->
@@ -378,6 +398,32 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <script>
+/* Luxury hero motion. GSAP enhances the scene; CSS remains the accessible fallback. */
+(function () {
+  const hero = document.querySelector('[data-luxury-hero]');
+  if (!hero || !window.gsap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const q = (s) => hero.querySelector(s);
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  tl.from(q('.hero-kicker'), { y: 22, opacity: 0, duration: .7 })
+    .from(q('.hero-title'), { y: 52, opacity: 0, duration: 1.05 }, '-=.35')
+    .from(q('.hero-copy'), { y: 26, opacity: 0, duration: .75 }, '-=.55')
+    .from(q('.hero-buttons'), { y: 22, opacity: 0, duration: .65 }, '-=.45')
+    .from(q('.hero-trust-luxury'), { y: 16, opacity: 0, duration: .6 }, '-=.35')
+    .from(q('.hero-product-card'), { x: 110, y: 35, rotation: 5, opacity: 0, duration: 1.15 }, '-=.95')
+    .from(q('.hero-float-chip'), { scale: .7, opacity: 0, stagger: .14, duration: .6 }, '-=.65');
+  gsap.to(q('.hero-product-card'), { y: -13, rotation: -.7, duration: 3.4, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+  gsap.to(q('.hero-product-halo'), { scale: 1.12, opacity: .65, duration: 2.8, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+  gsap.to(q('.chip-range'), { y: -9, x: 4, duration: 2.5, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+  gsap.to(q('.chip-comfort'), { y: 10, x: -4, duration: 2.9, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+  hero.addEventListener('mousemove', function (event) {
+    const rect = hero.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - .5;
+    const y = (event.clientY - rect.top) / rect.height - .5;
+    gsap.to(q('.hero-product-stage'), { x: x * 18, y: y * 12, duration: .8, overwrite: true });
+    gsap.to(q('.hero-grid-lines'), { x: x * -10, y: y * -7, duration: 1, overwrite: true });
+  });
+})();
+
 /* Homepage compare module — loads live data from /api/compare.php */
 (function () {
   const wrap = document.getElementById('compareTableWrap');
